@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background-color: #1e4d91;
+}
