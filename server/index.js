@@ -49,7 +49,8 @@ passport.use(
     {
       clientID: process.env.FACEBOOK_APP_ID,
       clientSecret: process.env.FACEBOOK_APP_SECRET,
-      callbackURL: "http://localhost:3000/users/auth/facebook/callback",
+      callbackURL:
+        "https://help-book-server.vercel.app/users/auth/facebook/callback",
       // profileFields: [
       //   "id",
       //   "name",

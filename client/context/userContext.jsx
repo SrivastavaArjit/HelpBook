@@ -13,7 +13,9 @@ export const UserContextProvider = ({ children }) => {
 
   const getUserDetails = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/users/profile");
+      const response = await axios.get(
+        "https://help-book-server.vercel.app/users/profile"
+      );
 
       if (response.data.error) {
         setUser(null);

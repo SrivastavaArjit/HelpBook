@@ -15,7 +15,7 @@ function Register() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/users/register",
+        "https://help-book-server.vercel.app/users/register",
         { username, email, password, rememberme },
         {
           headers: {
