@@ -1,7 +1,7 @@
 import express from "express";
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import User from "../models/User.js";
+// import bcrypt from "bcryptjs";
+// import jwt from "jsonwebtoken";
+// import User from "../models/User.js";
 import passport from "passport";
 import dotenv from "dotenv";
 import {
