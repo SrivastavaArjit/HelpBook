@@ -79,7 +79,7 @@ function Login() {
         <input type="submit" value="Login" />
       </form>
       <a
-        href="http://localhost:3000/users/auth/facebook"
+        href="https://help-book-server.vercel.app/users/auth/facebook"
         type="button"
         className="btn btn-primary fb-btn"
       >

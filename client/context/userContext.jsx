@@ -28,11 +28,13 @@ export const UserContextProvider = ({ children }) => {
       console.log(error);
     }
   };
+
   useEffect(() => {
     if (!user) {
       getUserDetails();
     }
   });
+
   return (
     <UserContext.Provider value={{ user, setUser }}>
       {children}

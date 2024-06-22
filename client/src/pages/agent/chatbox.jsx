@@ -35,6 +35,7 @@ function Chatbox() {
       <div className="chat-room"></div>
       <div className="chatbox-footer">
         <input type="text" placeholder="Message Username" />
+        {/* <button>Send</button> */}
       </div>
     </div>
   );
