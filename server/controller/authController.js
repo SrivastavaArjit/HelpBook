@@ -62,11 +62,14 @@ export const loginUser = async (req, res) => {
             id: findUser._id,
           },
           process.env.JSONKEY,
-          { expiresIn: "10s" },
+          { expiresIn: "1h" },
           (err, token) => {
             if (err) throw err;
             res
-              .cookie("token", token, { httpOnly: true, maxAge: 10000 })
+              .cookie("token", token, {
+                httpOnly: true,
+                maxAge: 60 * 60 * 10000,
+              })
               .json(findUser);
           }
         );
@@ -85,18 +88,13 @@ export const getProfile = (req, res) => {
   const { token } = req.cookies;
   console.log("token: ", token);
   if (token) {
-    jwt.verify(
-      token,
-      process.env.JSONKEY,
-      { expiresIn: "10s" },
-      (err, user) => {
-        if (err) {
-          res.json({ error: "Invalid Token" });
-        } else {
-          res.json(user);
-        }
+    jwt.verify(token, process.env.JSONKEY, { expiresIn: "1h" }, (err, user) => {
+      if (err) {
+        res.json({ error: "Invalid Token" });
+      } else {
+        res.json(user);
       }
-    );
+    });
   } else {
     res.json({ error: "Session Expired!" });
   }
